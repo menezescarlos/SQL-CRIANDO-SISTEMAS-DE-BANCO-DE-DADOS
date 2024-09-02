@@ -1,83 +1,166 @@
-# SQL-CRIANDO-SISTEMAS-DE-BANCO-DE-DADOS-
-INTRODUÇÃO AO SQL SERVER 2016, CRIANDO UM BANCO DE DADOS, MANIPULANDO DADOS, CONSULTANDO DADOS
 
-INTRODUÇÃO AO SQL SERVER 2016
+---
 
-1.	Banco de Dados Relacional
-Um Banco de dados relacional é uma arquitetura na qual os dados são armazenados em tabelas retangulares, semelhantes a uma planilha. Na maioria das vezes, essas tabelas possuem uma informação chave que as relaciona.
-Facilita a inserção, alteração, exclusão e recuperação de dados.
+# 🗃️ **SQL - Criando Sistemas de Banco de Dados**
 
-2.	Design do Banco de Dados
-É fundamental para o seu desempenho, a construção de um banco de dados passa por quatro etapas: Modelo Descritivo, Conceitual, Lógico e Físico.
-Descritivo: É um documento que indica a necessidade de construção de um Banco de Dados.
-Conceitual: Extraímos informações do modelo descritivo (Substantivos e Propriedades)
-Lógico: Esse modelo apresenta, em um formato de diagrama, as entidades e os atributos encontrados nos modelos anteriores.
-Físico: Pode ser obtido por meio do diagrama lógico de dados e está associado ao software de gerenciamento de Banco de Dados, neste caso, o SQL Server 2016.
-Tabelas(entidades): Local de armazenamentos das informações
-Campos(atributos): Características da tabela
-Chave Primária: Campo único que define a exclusividade da linha (Valores únicos, Não permite valores nulos, A tabela será ordenada pela chave primária (índice clusterizado) ).
-Relacionamento: Relação entre tabelas através de um ou mais campos (1 para 1, 1 para N e M para N).
-Dicionário de Dados: Complementa o diagrama físico descrevendo as características da tabela.
+---
 
-3.	Normalização de Dados
-O processo de organizar dados e eliminar informações redundantes de um banco de dados é denominado normalização.(Criar tabela, definir relacionamentos de acordo com as regras denominada Formas Normais)
+## 📚 **Introdução ao SQL Server 2016**
 
-4.	Arquitetura Cliente Servidor
+### 🏛️ **Banco de Dados Relacional**
 
-5.	As Linguagens SQL e T-SQL
+Um banco de dados relacional é uma arquitetura na qual os dados são armazenados em tabelas retangulares, semelhantes a uma planilha. Essas tabelas frequentemente possuem uma informação chave que as relaciona, facilitando a inserção, alteração, exclusão e recuperação de dados.
 
-6.	SQL Server
+### 🛠️ **Design do Banco de Dados**
 
-7.	Ferramentas de Gerenciamento
+A construção de um banco de dados passa por quatro etapas:
 
-8.	SQL Server Management Studio (SSMS)
+- **Modelo Descritivo:** Documento indicando a necessidade de construção de um banco de dados.
+- **Modelo Conceitual:** Extração de informações do modelo descritivo (substantivos e propriedades).
+- **Modelo Lógico:** Diagrama das entidades e atributos encontrados nos modelos anteriores.
+- **Modelo Físico:** Associado ao software de gerenciamento de banco de dados, neste caso, o SQL Server 2016.
 
-CRIANDO UM BANCO DE DADOS
+**Componentes:**
 
-1.	CREATE DATABASE: CREATE DATABASE <nome do banco de dados>
-USE <nome do banco de dados>
-2.	CREATE TABLE: 
-CREATE TABLE TB_ALUNO
-(COD_ALUNO 		INT,
-NOME 			VARCHAR(50)
+- **Tabelas (entidades):** Local de armazenamento das informações.
+- **Campos (atributos):** Características da tabela.
+- **Chave Primária:** Campo único que define a exclusividade da linha.
+- **Relacionamento:** Relação entre tabelas (1 para 1, 1 para N, M para N).
+- **Dicionário de Dados:** Descreve as características da tabela.
+
+### 🗂️ **Normalização de Dados**
+
+O processo de organizar dados e eliminar informações redundantes de um banco de dados é chamado normalização.
+
+---
+
+## 🛠️ **Arquitetura Cliente-Servidor**
+
+---
+
+## 🧑‍💻 **As Linguagens SQL e T-SQL**
+
+### 🖥️ **SQL Server**
+
+- **Ferramentas de Gerenciamento:** SQL Server Management Studio (SSMS)
+
+---
+
+## 🛠️ **Criando um Banco de Dados**
+
+### 🗃️ **CREATE DATABASE**
+
+```sql
+CREATE DATABASE nome_do_banco;
+USE nome_do_banco;
+```
+
+### 📋 **CREATE TABLE**
+
+```sql
+CREATE TABLE TB_ALUNO (
+    COD_ALUNO INT IDENTITY,
+    NOME VARCHAR(50)
 );
-3.	Tipos de Dados: Inteiros, Bit, Numéricos exatos, Valores monetários, Números aproximados, Data e Hora, Strings de caracteres ANSI, Strings de caracteres Unicode, Strings Binárias, Outros tipos de Dados.
-4.	Campo de autonumeração (IDENTITY): 
-CREATE TABLE TB_ALUNO
-(COD_ALUNO 		INT IDENTITY,
-NOME 			VARCHAR(50)
+```
+
+### 🏷️ **Tipos de Dados**
+
+- **Inteiros, Bit, Numéricos exatos**
+- **Valores monetários, Números aproximados**
+- **Data e Hora, Strings de caracteres ANSI e Unicode**
+- **Strings Binárias, Outros tipos de Dados**
+
+### 🔢 **Campo de Autonumeração**
+
+```sql
+CREATE TABLE TB_ALUNO (
+    COD_ALUNO INT IDENTITY,
+    NOME VARCHAR(50)
 );
+```
 
-5.	Constraints: (PRIMARY KEY, FOREING KEY, CHEK, UNIQUE, DEFAULT)
+### ⚙️ **Constraints**
 
-NULABILIDADE
-CREATE TABLE TB_ALUNO
-(COD_ALUNO 		INT	 IDENTITY 	NOT NULL,
-NOME 			VARCHAR(50)	NOT NULL
+- **PRIMARY KEY, FOREIGN KEY, CHECK, UNIQUE, DEFAULT**
+
+### ❓ **Nulabilidade**
+
+```sql
+CREATE TABLE TB_ALUNO (
+    COD_ALUNO INT IDENTITY NOT NULL,
+    NOME VARCHAR(50) NOT NULL
 );
+```
 
-MANIPULANDO DADOS
+---
 
-1.	Constantes
-2.	Nserção de Dados
-3.	Utilização de TOP em uma instrução INSERT
-4.	OUTPUT
-5.	Atualização e Exclusão de Dados
-6.	Update
-7.	Delete
-8.	OUTPUT para DELETE e UPDATE
-9.	Transações
+## 🔄 **Manipulando Dados**
 
-CONSULTANDO DADOS
+### 🆗 **Constantes**
 
-1.	SELECT
-2.	Ordenação de Dados
-3.	Operadores Relacionais
-4.	Operadores Lógicos
-5.	Consulta de Intervalos com BETWEEN
-6.	Consulta com Base em Caracteres
-7.	Consulta de Valores Pertencentes ou não a uma Lista de Elementos
-8.	Lidando com Valores Nulos
-9.	Substituição de Valores Nulos
-10.	UNION
-11.	EXCEPT e INTERSECT
+### ➕ **Inserção de Dados**
+
+- Utilização de **TOP** em uma instrução **INSERT**
+- **OUTPUT**
+
+### 🔄 **Atualização e Exclusão de Dados**
+
+- **UPDATE**
+- **DELETE**
+- **OUTPUT** para **DELETE** e **UPDATE**
+
+### 🔄 **Transações**
+
+---
+
+## 🔍 **Consultando Dados**
+
+### 🗂️ **SELECT**
+
+- **Ordenação de Dados**
+- **Operadores Relacionais**
+- **Operadores Lógicos**
+- **Consulta de Intervalos com BETWEEN**
+- **Consulta com Base em Caracteres**
+- **Consulta de Valores Pertencentes ou não a uma Lista de Elementos**
+- **Lidando com Valores Nulos**
+- **Substituição de Valores Nulos**
+- **UNION**
+- **EXCEPT e INTERSECT**
+
+---
+
+## ℹ️ **About**
+
+Introdução ao SQL Server 2016, criando um banco de dados, manipulando dados, e consultando dados.
+
+---
+
+## 📚 **Resources**
+
+- **Readme**
+- **Activity**
+
+---
+
+## ⭐ **Stars**
+
+0 stars
+
+### 👁️ **Watchers**
+
+1 watching
+
+### 🍴 **Forks**
+
+0 forks
+
+### 📦 **Releases**
+
+No releases published
+
+### 📦 **Packages**
+
+No packages published
+
